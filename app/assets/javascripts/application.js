@@ -11,4 +11,16 @@
 // about supported directives.
 //
 //= require turbolinks
-//= require_tree .
+//= require jquery
+//= require bootstrap.min
+//= require jquery.themepunch.plugins.min
+//= require jquery.themepunch.revolution.min
+//= require waypoints.min
+//= require jquery.countdown.min
+//= require filter
+//= require isotope
+//= require jquery.prettyPhoto
+//= require jquery.carouFredSel-6.2.1-packed
+//= require respond.min
+//= require html5shiv
+//= require custom
