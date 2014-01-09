@@ -9997,7 +9997,6 @@ div.ppt {
   margin: 20px 0;
   padding-top: 80px;
   padding-bottom: 70px;
-  background: #fff url(<%= image_tag 'back.jpg' %>) center center repeat;
 }
 
 .htab .nav-tab{
