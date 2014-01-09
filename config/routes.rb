@@ -1,9 +1,22 @@
 Biotech::Application.routes.draw do
+  get "users/new"
+  get "users/create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+   # Sessions Users
+  get'logout_user' => "sessions#destroy", :as => "logout_user"
+  post "login_user" => "sessions#new", :as => "login_user"
+
+  # Users
+  get "signup" => "users#new", :as => "signup"
+
+  resources :users
+  resources :sessions
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
