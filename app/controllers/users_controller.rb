@@ -62,5 +62,3 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless @user == session[:user_id]
     end
 end
-
-end
