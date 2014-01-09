@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Biotech</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <title>Organización Hondureña de Biotecnología</title>
+  <%= stylesheet_link_tag    "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag "jquery.themepunch.plugins.min" %>
+  <%= javascript_include_tag "jquery.themepunch.revolution.min" %>
+  <%= javascript_include_tag "waypoints.min" %>
+  <%= javascript_include_tag "jquery.countdown.min" %>
+  <%= javascript_include_tag "filter" %>
+  <%= javascript_include_tag "isotope" %>
+  <%= javascript_include_tag "jquery.prettyPhoto" %>
+  <%= javascript_include_tag "jquery.carouFredSel-6.2.1-packed" %>
+  <%= javascript_include_tag "respond.min" %>
+  <%= javascript_include_tag "html5shiv" %>
+  <%= javascript_include_tag "custom" %>
 </body>
 </html>
