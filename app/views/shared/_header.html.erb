@@ -8,7 +8,7 @@
 						<!-- Navigation Menu Link Lists -->
 						<div class="col-md-2 col-sm-4 col-xs-6">
 							<div class="menu">
-								<span class="br-lblue"><i class="fa fa-desktop"></i> &nbsp; Menu Column</span>
+								<span class="br-lblue"><i class="fa fa-desktop"></i> &nbsp; Ayuda </span>
 								<div class="menu-list">
 									<ul>
 										<li><%= link_to("/welcome/contact", {:controller => "welcome", :action => "contact" }) do %>
@@ -16,14 +16,21 @@
 										  Contactar
 											<% end %>
 										</li>
-										<li><a href="features.html"><i class="fa fa-check-square-o lblue"></i> Features</a></li>
-										<li><%= link_to("/welcome/about") do %>
+										<li><%= link_to("/welcome/features", {:controller => "welcome", :action => "features"}) do %>
+										  <i class="fa fa-check-square-o lblue"></i>
+										  Qué Hacemos
+											<% end %>
+										</li>
+										<li><%= link_to("/welcome/about", {:controller => "welcome", :action => "about"}) do %>
 										  <i class="fa fa-user pink"></i>
 										  Quiénes Somos
 											<% end %>
 										</li>
-										
-										<li><a href="gallery.html"><i class="fa fa-picture-o orange"></i> Gallery</a></li>
+										<li><%= link_to("/welcome/faq", {:controller => "welcome", :action => "faq"}) do %>
+										  <i class="fa fa-question red"></i>
+										  	Preguntas Frecuentes
+											<% end %>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -59,7 +66,7 @@
 								<span class="br-orange"><i class="fa fa-desktop"></i> &nbsp; Menu Column</span>
 								<div class="menu-list">
 									<ul>
-										<li><a href="faq.html"><i class="fa fa-question red"></i> FAQ</a></li>
+										<li><a href="gallery.html"><i class="fa fa-picture-o orange"></i> Gallery</a></li>
 										<li><a href="careers.html"><i class="fa fa-briefcase lblue"></i> Careers</a></li>
 										<li><a href="testimonials.html"><i class="fa fa-group pink"></i> Testimonials</a></li>
 										<li><a href="support.html"><i class="fa fa-envelope orange"></i> Support</a></li>

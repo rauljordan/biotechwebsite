@@ -9,6 +9,8 @@ Biotech::Application.routes.draw do
 
   get 'welcome/about' => "welcome#about", :as => "welcome/about"
   get 'welcome/contact' => "welcome#contact", :as => "welcome/contact"
+  get 'welcome/faq' => "welcome#faq", :as => "welcome/faq"
+  get 'welcome/features' => "welcome#features", :as => "welcome/features"
 
    # Sessions Users
   get'logout_user' => "sessions#destroy", :as => "logout_user"
