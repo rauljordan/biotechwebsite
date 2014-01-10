@@ -37,13 +37,31 @@
 						</div>
 						<div class="col-md-2 col-sm-4 col-xs-6">
 							<div class="menu">
-								<span class="br-green"><i class="fa fa-desktop"></i> &nbsp; Menu Column</span>
+								<span class="br-green"><i class="fa fa-desktop"></i> &nbsp; Membresía y Más</span>
 								<div class="menu-list">
 									<ul>
-										<li><a href="portfolio.html"><i class="fa fa-camera green"></i> Portfolio</a></li>
-										<li><a href="blog.html"><i class="fa fa-comments-o blue"></i> Blog Page</a></li>
-										<li><a href="pricing.html"><i class="fa fa-table red"></i> Pricing Table</a></li>
-										<li><a href="comingsoon.html"><i class="fa fa-times lblue"></i> Coming Soon</a></li>
+										<li><%= link_to("/welcome/service", {:controller => "welcome", :action => "service"}) do %>
+										  <i class="fa fa-gear red"></i>
+										  		Servicios
+											<% end %>
+										</li>
+										<li><%= link_to("/welcome/pricing", {:controller => "welcome", :action => "pricing"}) do %>
+										  <i class="fa fa-table red"></i>
+										  		Membresía Premium
+											<% end %>
+										</li>
+										<li><%= link_to("/welcome/benefits", {:controller => "articles", :action => "benefits"}) do %>
+										  <i class="fa fa-briefcase lblue"></i>
+										  		Beneficios
+											<% end %>
+										</li>
+
+										<li><%= link_to("/articles/show", {:controller => "articles", :action => "show"}) do %>
+										  <i class="fa fa-comments-o blue"></i>
+										  		Noticias y Artículos
+											<% end %>
+										</li>
+
 									</ul>
 								</div>
 							</div>

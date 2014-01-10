@@ -13,4 +13,10 @@ class WelcomeController < ApplicationController
 
 	def features
 	end
+
+	def service
+	end
+
+	def benefits
+	end
 end

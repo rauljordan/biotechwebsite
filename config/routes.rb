@@ -1,4 +1,5 @@
 Biotech::Application.routes.draw do
+  get "articles/index"
   get "users/new"
   get "users/create"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,6 +12,13 @@ Biotech::Application.routes.draw do
   get 'welcome/contact' => "welcome#contact", :as => "welcome/contact"
   get 'welcome/faq' => "welcome#faq", :as => "welcome/faq"
   get 'welcome/features' => "welcome#features", :as => "welcome/features"
+
+  get 'welcome/service' => "welcome#service", :as => "welcome/service"
+  get 'welcome/pricing' => "welcome#pricing", :as => "welcome/pricing"
+  get 'welcome/benefits' => "welcome#benefits", :as => "welcome/benefits"
+
+  # Articles
+  get 'articles/show' => "articles#show", :as => "articles/show"
 
    # Sessions Users
   get'logout_user' => "sessions#destroy", :as => "logout_user"
