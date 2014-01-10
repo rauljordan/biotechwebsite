@@ -7,6 +7,9 @@ Biotech::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  get 'welcome/about' => "welcome#about", :as => "welcome/about"
+  get 'welcome/contact' => "welcome#contact", :as => "welcome/contact"
+
    # Sessions Users
   get'logout_user' => "sessions#destroy", :as => "logout_user"
   post "login_user" => "sessions#new", :as => "login_user"
