@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   include BCrypt
+  attr_accessor :password
  
   before_save :encrypt_password
+
 
   validates_confirmation_of :password , :message => "Passwords donot match."
   validates_presence_of :password, :message => "Please Enter a Password"

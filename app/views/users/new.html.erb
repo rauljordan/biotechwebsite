@@ -1,53 +1,118 @@
-<div class="wrap">
-  <div class="content container">
-    <div class="row">
-      <div class="col-md-12">
-              <h1 class="page-title">Join ThinkGuru</h1>
+
+<!-- Head Start -->
+    <div class="head inner-pages">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4">
+            <!-- Logo and Head Text -->
+            <div class="logo">
+              <!-- Logo Icon and Heading -->
+              <%= image_tag "logo2.png", :class => "img-responsive" %><span><a href="/">OHB</a></span>
+            </div>
           </div>
-      </div>
-      <div class="row">
-        <div class="col-md-7">
-              <section class="widget">
-                  <div class="body">
-                  <%= form_for(@user) do |f| %>
-                    <% if @user.errors.any? %>
-                      <div id="error_explanation">
-                        <h2><%= pluralize(@user.errors.count, "error") %> in creating Account : </h2>
-                        <ul>
-                        <% @user.errors.each do |attr,msg| %>
-                          <li><%=attr %> | <%=msg %><li>
-                        <% end %>
-                        </ul>
-                      </div>
-                    <% end %>
-                      
-             
-                
-                  <p>
-                    <%= f.label "First Name" %><br />
-                    <%= f.text_field :first_name %>
-                  </p>
-                  <p>
-                    <%= f.label "Last Name" %><br />
-                    <%= f.text_field :last_name %>
-                  </p>
-                  <p>
-                    <%= f.label :email %><br />
-                    <%= f.text_field :email %>
-                  </p>
-                  <p>
-                    <%= f.label :password %><br />
-                    <%= f.password_field :password %>
-                  </p>
-                  <p>
-                    <%= f.label :password_confirmation %><br />
-                    <%= f.password_field :password_confirmation %>
-                  </p>
-                  <p class="button"><%= f.submit%></p>
-                <% end %>
-              </section>
+          <div class="col-md-3 col-sm-4">
+            <!-- Social Icon Menu -->
+            <div class="social">
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="search">
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Text to search">
+                  <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button"><i class="fa fa-search"></i></button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-3 hidden-sm">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+    <!-- Menu Bar End -->
+        <!-- Inner Page Heading -->
+        <div class="inner-page sign">
+          <div class="container">
+            <h2><i class="fa fa-sign-in red"></i><strong>Registrarse</strong> drsdam eactualtea ching...</h2>
+            <div class="sign-content">
+              <div class="row">
+                
+                <div class="col-md-3 col-sm-3">
+                  <div class="well br-lblue white">
+                    <h5>Milique Suntculpa</h5>
+                    <p> Nam libero tempo soluta nobis est eligendi optio cumque nihil impedit quo minus id qxime placeat facere posnis voluptas assunis dolor repellendus. </p>
+                  </div>
+                  <div class="well br-orange white">
+                    <h5>Wefoice Sntram</h5>
+                    <p> Nam libero tempo soluta nobis edi optio cumque nihil impedit quo miod maxime placeat facere posnis voluptas assumenda enis dolor repellendus. </p>
+                  </div>
+                </div>
+                <div class="col-md-5 col-sm-5">
+                  <!-- Sign Up area -->
+                  <div class="sign-up">
+
+                    <h3><i class="fa fa-user green"></i> &nbsp;Regístrate Como Miembro</h3>
+                    <div class="container">
+                    <!-- Sign up Form Start -->
+                    <%= form_for(@user) do |f| %>
+                      <% if @user.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@user.errors.count, "error") %> haciendo su cuenta: </h2>
+                          <ul>
+                          <% @user.errors.each do |attr,msg| %>
+                            <li><%=attr %> | <%=msg %><li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>              
+                      <div class="form-group">
+                        <%= f.label "Primer Nombre", :class => "col-lg-3 control-label" %>
+                        
+                          <%= f.text_field :first_name, :class => "col-lg-9 form-control" %>
+                        
+                      </div>
+                      <div class="form-group">
+                        <%= f.label "Apellido", :class => "col-lg-3 control-label" %>
+                        
+                          <%= f.text_field :last_name, :class => "col-lg-9 form-control" %>
+                        
+                      </div>
+                      <div class="form-group">
+                        <%= f.label "Email", :class => "col-lg-3 control-label" %>
+                        
+                          <%= f.text_field :email, :class => "col-lg-9 form-control" %>
+                      
+                      </div>
+                      <div class="form-group">
+                        <%= f.label "Contraseña", :class => "col-lg-3 control-label" %>
+                       
+                          <%= f.password_field :password, :class => "col-lg-9 form-control" %>
+                     
+                      </div>
+                      <div class="form-group">
+                        <%= f.label "Confirmación", :class => "col-lg-3 control-label" %>
+                        
+                          <%= f.password_field :password_confirmation, :class => "col-lg-9 form-control" %>
+                  
+                      </div>
+                      <div class="form-group">
+                        <div class="col-lg-offset-3 col-lg-9">
+                          <%= f.submit :class => "btn btn-info",:value => "Crear" %>&nbsp;
+                          <button type="reset" class="btn btn-default">Reset</button>
+                        </div>
+                      <div>
+                     <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>

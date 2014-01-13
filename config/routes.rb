@@ -17,18 +17,21 @@ Biotech::Application.routes.draw do
   get 'welcome/pricing' => "welcome#pricing", :as => "welcome/pricing"
   get 'welcome/benefits' => "welcome#benefits", :as => "welcome/benefits"
 
+  get 'welcome/goals' => "welcome#goals", :as => "welcome/goals"
+  get 'welcome/helping' => "welcome#helping", :as => "welcome/helping"
+
   # Articles
   get 'articles/show' => "articles#show", :as => "articles/show"
 
    # Sessions Users
-  get'logout_user' => "sessions#destroy", :as => "logout_user"
+  get'sessions/destroy' => "sessions#destroy", :as => "sessions/destroy"
   post "login_user" => "sessions#new", :as => "login_user"
 
   # Users
-  get "signup" => "users#new", :as => "signup"
+  get "users/signup" => "users#new", :as => "users/signup"
 
   resources :users
-  resources :sessions
+  resources :sessions, only: [:new, :destroy]
 
 
   # Example of regular route:

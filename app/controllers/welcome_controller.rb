@@ -19,4 +19,8 @@ class WelcomeController < ApplicationController
 
 	def benefits
 	end
+
+	def goals
+	end
+
 end

@@ -6,7 +6,7 @@
 				<div class="navigation">
 					<div class="row">
 						<!-- Navigation Menu Link Lists -->
-						<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="col-md-3 col-sm-4 col-xs-6">
 							<div class="menu">
 								<span class="br-lblue"><i class="fa fa-desktop"></i> &nbsp; Ayuda </span>
 								<div class="menu-list">
@@ -35,14 +35,14 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="col-md-3 col-sm-4 col-xs-6">
 							<div class="menu">
 								<span class="br-green"><i class="fa fa-desktop"></i> &nbsp; Membresía y Más</span>
 								<div class="menu-list">
 									<ul>
 										<li><%= link_to("/welcome/service", {:controller => "welcome", :action => "service"}) do %>
 										  <i class="fa fa-gear red"></i>
-										  		Servicios
+										  		Ayúdanos
 											<% end %>
 										</li>
 										<li><%= link_to("/welcome/pricing", {:controller => "welcome", :action => "pricing"}) do %>
@@ -66,42 +66,62 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-2 col-sm-4 col-xs-6">
+						<div class="col-md-3 col-sm-4 col-xs-6">
 							<div class="menu">
-								<span class="br-red"><i class="fa fa-desktop"></i> &nbsp; Menu Column</span>
+								<% if current_user %>
+									<span class="br-red"><i class="fa fa-desktop"></i> &nbsp; Estás Ingresado</span>
+								<% else %>
+									<span class="br-red"><i class="fa fa-desktop"></i> &nbsp; Login / Registrarse</span>
+								<% end %>
 								<div class="menu-list">
 									<ul>
-										<li><a href="products.html"><i class="fa fa-puzzle-piece pink"></i> Products</a></li>
-										<li><a href="contact.html"><i class="fa fa-phone orange"></i> Contact Us</a></li>
-										<li><a href="login.html"><i class="fa fa-sign-in green"></i> Login / Register</a></li>
-										<li><a href="error.html"><i class="fa fa-question blue"></i> 404 Error Page</a></li>
+										<li><%= link_to("/welcome/goals", {:controller => "welcome", :action => "goals"}) do %>
+										  <i class="fa fa-group pink"></i>
+										  		Metas y Planes
+											<% end %>
+										</li>
+										<li><%= link_to("/welcome/helping", {:controller => "welcome", :action => "helping"}) do %>
+										  <i class="fa fa-puzzle-piece green"></i>
+										  		Ideas
+											<% end %>
+										</li>
+										<% if current_user %>
+											<li><%= link_to("/sessions/destroy", {:controller => "sessions", :action => "destroy"}) do %>
+											  <i class="fa fa-sign-in blue"></i>
+											  		Cerrar Sesión
+												<% end %>
+											</li>
+											<li><%= link_to("/users/signup", {:controller => "users", :action => "new"}) do %>
+											  <i class="fa fa-sign-in blue"></i>
+											  		Ver Miembros
+												<% end %>
+											</li>
+										<% else %>
+											<li><%= link_to("/users/signup", {:controller => "users", :action => "new"}) do %>
+											  <i class="fa fa-sign-in blue"></i>
+											  		Registrarse
+												<% end %>
+											</li>
+											<li><%= link_to("/sessions/new", {:controller => "sessions", :action => "new"}) do %>
+											  <i class="fa fa-sign-in red"></i>
+											  		Log In
+												<% end %>
+											</li>
+										<% end %>
 									</ul>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-2 col-sm-4 col-xs-6">
-							<div class="menu">
-								<span class="br-orange"><i class="fa fa-desktop"></i> &nbsp; Menu Column</span>
-								<div class="menu-list">
-									<ul>
-										<li><a href="gallery.html"><i class="fa fa-picture-o orange"></i> Gallery</a></li>
-										<li><a href="careers.html"><i class="fa fa-briefcase lblue"></i> Careers</a></li>
-										<li><a href="testimonials.html"><i class="fa fa-group pink"></i> Testimonials</a></li>
-										<li><a href="support.html"><i class="fa fa-envelope orange"></i> Support</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 hidden-xs">
+						<div class="col-md-3 col-sm-4 hidden-xs">
 							<div class="sform br-white">
-								<span><i class="fa fa-envelope lblue"></i> Subscription</span>
+								<span><i class="fa fa-envelope lblue"></i> Subscribirse</span>
 								<div class="form">
 									<form role="form">
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Enter your Name">
-											<input type="email" class="form-control" placeholder="Enter your E-mail">
-											<button type="button" class="btn btn-info btn-sm">Subscribe</button>
-											<button type="button" class="btn btn-default btn-sm">Reset</button>
+											<input type="text" class="form-control" placeholder="Nombre">
+											<input type="email" class="form-control" placeholder="E-mail">
+											<button type="button" class="btn btn-info btn-sm">Subscribirse</button>
+											<button type="button" class="btn btn-default btn-sm">Cancelar</button>
 										</div>
 									</form>
 								</div>
