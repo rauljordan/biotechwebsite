@@ -180,7 +180,7 @@ $("#slist a").click(function(e){
 
 $(function(){
 	launchTime = new Date(); 
-	launchTime.setDate(launchTime.getDate() + 365); 
+	launchTime.setDate(launchTime.getDate() + 20); 
 	$("#countdown").countdown({until: launchTime, format: "dHMS"});
 });
 

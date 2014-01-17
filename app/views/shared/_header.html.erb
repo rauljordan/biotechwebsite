@@ -11,6 +11,19 @@
 								<span class="br-lblue"><i class="fa fa-desktop"></i> &nbsp; Ayuda </span>
 								<div class="menu-list">
 									<ul>
+										<% if current_user %>
+											<li><%= link_to("/articles/show", {:controller => "articles", :action => "show"}) do %>
+											  <i class="fa fa-comments-o blue"></i>
+											  		Noticias y Artículos
+												<% end %>
+											</li>
+										<% else %>
+											<li><%= link_to("/welcome/index", {:controller => "welcome", :action => "index" }) do %>
+											  <i class="fa fa-home"></i>
+											  Página Principal
+												<% end %>
+											</li>
+										<% end %>	
 										<li><%= link_to("/welcome/contact", {:controller => "welcome", :action => "contact" }) do %>
 										  <i class="fa fa-phone orange"></i>
 										  Contactar
@@ -26,11 +39,8 @@
 										  Quiénes Somos
 											<% end %>
 										</li>
-										<li><%= link_to("/welcome/faq", {:controller => "welcome", :action => "faq"}) do %>
-										  <i class="fa fa-question red"></i>
-										  	Preguntas Frecuentes
-											<% end %>
-										</li>
+
+										
 									</ul>
 								</div>
 							</div>
@@ -55,12 +65,13 @@
 										  		Beneficios
 											<% end %>
 										</li>
-
-										<li><%= link_to("/articles/show", {:controller => "articles", :action => "show"}) do %>
-										  <i class="fa fa-comments-o blue"></i>
-										  		Noticias y Artículos
+										<li><%= link_to("/welcome/faq", {:controller => "welcome", :action => "faq"}) do %>
+										  <i class="fa fa-question red"></i>
+										  	Preguntas Frecuentes
 											<% end %>
 										</li>
+
+										
 
 									</ul>
 								</div>
@@ -91,7 +102,7 @@
 											  		Cerrar Sesión
 												<% end %>
 											</li>
-											<li><%= link_to("/users/signup", {:controller => "users", :action => "new"}) do %>
+											<li><%= link_to("/users/index", {:controller => "users", :action => "new"}) do %>
 											  <i class="fa fa-sign-in blue"></i>
 											  		Ver Miembros
 												<% end %>

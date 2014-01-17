@@ -6,8 +6,10 @@ Biotech::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
   root 'welcome#index'
 
+  get 'welcome/index' => "welcome#index", :as => "welcome/index"
   get 'welcome/about' => "welcome#about", :as => "welcome/about"
   get 'welcome/contact' => "welcome#contact", :as => "welcome/contact"
   get 'welcome/faq' => "welcome#faq", :as => "welcome/faq"
@@ -29,6 +31,7 @@ Biotech::Application.routes.draw do
 
   # Users
   get "users/signup" => "users#new", :as => "users/signup"
+  get "users/index" => "users#index", :as => "users/index"
 
   resources :users
   resources :sessions, only: [:new, :destroy]
