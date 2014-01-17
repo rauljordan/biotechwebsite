@@ -14,7 +14,7 @@
 //= require bootstrap.min
 //= require jquery.themepunch.plugins.min
 //= require jquery.themepunch.revolution.min
-//= require waypoints.min
+//= require waypoints
 //= require jquery.countdown.min
 //= require filter
 //= require isotope
